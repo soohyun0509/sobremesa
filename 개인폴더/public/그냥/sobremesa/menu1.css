@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/* menu_content 부분 flex 사용
+#F1F3F8
+#D6E0F0
+#8D93AB
+#393B44
+*/
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------전체--------------------*/
+*{border: 1px solid black ;}
+
+
+
+/*-----------본문 전체 공통---------------------*/
+.menu_main{ width: 1200px; margin: 0 auto; text-align: center;}
+
+.menu_title{
+	font-family: 'Noto Serif HK', serif; 
+	font-size: 100px; font-weight: bold;
+	background-color: #D6E0F0;
+	border-bottom: 2px solid #393B44; 
+	padding: 30px 0 40px 0;
+}
+	
+
+.menu_content{
+	display: flex; justify-content: space-around;
+	background-color: #F1F3F8;
+	
+}
+
+.menu_content img{width:285px; height: 250px;}
+.image_box{
+	
+	margin: 20px 0; 
+	
+	padding-bottom: 15px; 
+}
+
+/*--------------------------------*/
+.menu_content_left,.menu_content_center,
+.menu_content_right{
+	width: 300px;
+	margin: 50px 0;
+	border: 3px solid #8D93AB; 
+	outline: 3px solid #393B44;
+	outline-offset: 20px;
+	
+}
+
+.menu_content_left{
+	margin-left: 50px;
+	
+	
+}
+.menu_content_right{margin-right: 50px;}
+
+.menu_description li{padding: 20px;}
+
+.sub_title{ 
+	font-size: 40px; font-family: 'Noto Serif HK', serif;
+	padding: 15px 0;
+}
+
+
+/*--------------------------------*/
