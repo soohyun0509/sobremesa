@@ -82,7 +82,7 @@ function lotto(){
 	
 
 	
-	for(let a of numbers){
+	for(let a of numbers){ //선택번호for문 안에 추첨번호 for문 넣어서  각 번호마다 각 추첨번호 값을 비교했어야했음! 
 		if(rand.indexOf(a)!=-1){
 			result+=a
 			document.getElementById('result').innerHTML+=`맞은 번호 : ${result}`
