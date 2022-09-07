@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+/*
+#F1F3F8
+#D6E0F0
+#8D93AB
+#393B44
+*/
+
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* css 기본 설정 */
+*{ margin : 0; padding: 0;}
+a{ text-decoration: none; color: black; }
+a:hover{ color: #393B44; }
+li{ list-style-type: none; }
+
+
+
+
+
+.box{ width: 1200px; margin: 0 auto; position: relative; }
+
+/* ------------------------ 헤더 ----------------------------*/
+#header{ height: 120px; background: white;  font-family: 'GangwonEdu_OTFBoldA';}
+.logo{ position: absolute; top:20px; left: 20px; }
+.hd_img{ width:90px; height: 80px; } /* 로고이미지 */
+
+.menus{ float: right; text-align: right;}
+.menus li{ display: inline; }
+.top_menu{ margin: 30px 0px;}
+.main_menu{ background: #D6E0F0; padding: 10px; }
+.main_menu li a{
+	font-size: 20px; margin-left: 100px; 
+}
+
+
+textarea{resize: none;}
+/*-----------------------*/
+.customerbox{
+	clear:both;
+	width: 1200px; margin: 0 auto;
+	padding: 50px;
+	border-bottom: 3px solid #393B44;
+	
+}
+.cutomer_title{
+	margin-bottom: 50px; padding: 20px;
+	font-family: 'GangwonEdu_OTFBoldA';
+}
+.cutomer_title h3{
+	font-size: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black; 
+}
+.cutomer_title p{ padding-top: 15px;}
+/*-----------------------*/
+.cutomer_content{
+	margin-bottom: 100px;
+	
+}
+
+
+.rowbox{
+	width: 800px; display: inline-block;
+	font-size: 20px; font-family: 'GangwonEdu_OTFBoldA';
+	border-bottom: 1px solid #8D93AB;
+	
+}
+.col1{
+	float: left; padding:15px 10px 10px 10px;
+	width: 200px; 
+	
+}
+.col2{
+	width: 400px;
+	float: left;
+	background-color: white;
+	padding: 5px 0 5px 15px;
+	border-left: 1px solid #8D93AB;
+		
+		
+}
+
+.col2 select, .col2 input{
+	 border: 1px solid black;
+	 padding: 5px 15px 5px 10px;
+}
+
+.select_box select{
+	padding-right: 30px;
+}
+
+.email select{
+	padding-right: 45px;
+	padding-top: 5px;
+}
+
+.btn{
+	border: 2px solid #393B44; 
+	width:120px; margin:0 auto;
+	margin-right: 300px;
+	margin-top: 20px;
+	background-color: #393B44; color: white;
+	padding: 25px 15px 15px 22px;
+	font-size: 22px;  font-family: 'GangwonEdu_OTFBoldA';
+	
+}
+
+.select_box, .email{
+	position: relative;
+}
+
+.select_box::after{
+	font-family: 'Font Awesome 5 Pro';
+	content: '\f078';
+	font-weight: 900;
+	display: inline-block; 
+	position: absolute;
+	left: 150px;
+	top: 5px;
+}
+
+.email::after{
+	font-family: 'Font Awesome 5 Pro';
+	content: '\f078';
+	font-weight: 900;
+	display: inline-block; 
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+
+
+
+/*------------스크립트 기능-------------*/
+.result_content{
+	clear: both;
+	height: 600px;
+	padding: 0 20px;
+	margin-bottom: 50px;
+	
+}
+.result_content h3{
+	font-size: 30px;
+	font-family: 'GangwonEdu_OTFBoldA';
+	padding: 50px 0 10px 40px;
+	width: 200px;
+	margin: 0 auto;
+	border-bottom: 2px solid #393B44 ;
+	
+} 
+.result{
+	float: left; 
+}
+
+.result, .result2{
+	width: 500px; margin: 0 auto;
+	border: 1px solid black;
+	text-align: center;
+	font-family: 'GangwonEdu_OTFBoldA';
+	margin: 100px 0 50px 0;
+	background-color: white;
+	font-size: 20px;
+	
+}
+
+.result th, .result tr{
+	border: 1px solid black;
+}
+
+.result th{
+	border: 1px solid black;
+	padding: 10px;	
+}
+
+.result2{
+	float: right;
+	text-align: center;
+}
+
+.result2 th, .result2 tr{
+	padding:10px;
+	border: 1px solid black;
+}
+
+
+/* ----------------------- 푸터  ------------------------ */
+#footer{ 
+	clear: both;
+	background-color:#393B44; /* 배경색 */
+	color: white;   /* 글자색 */
+	height: 250px;
+	padding: 50px;
+	font-family: 'GangwonEdu_OTFBoldA';
+}
+.ft_item{
+	float: left;
+	width: 380px;
+	margin-top: 50px;
+}
+.ft_item li{ display: inline; }
+.ft_item ul{ margin-bottom: 20px; font-size: 20px; }
+.ft_item a:hover{ color: #F1F3F8; }
+
+
+.ft_sns{
+	display: inline-block;
+	width: 380px;
+	margin-top: 50px;
+	text-align: center;
+}
+.ft_sns img{ margin-left: 15px;}
