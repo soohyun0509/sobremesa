@@ -6,13 +6,11 @@
 		
 		<style type="text/css">
 		
-			*{border: 1px solid black;}
 			.container{display: flex; }
-			div{
-				width: 1200px; height: 500px;
-			}
-		
-		
+			.box{width: 600px; height: 600px; border-right: 1px solid black;}
+			.list{border-collapse: collapse;}
+			.list th{width: 100px;}
+			.list tr th{border: 1px solid black;}
 		
 		</style>
 		
@@ -22,21 +20,35 @@
 	<body>
 		
 		<div class="container">
-			<div>
+			<div class="box">
 				<h3>글쓰기 페이지</h3>
-				작성자 : <input type="text"><br>
-				비밀번호 : <input type="text"><br>
-				내용 : <input type="text"><br>
-				제목 : <input type="text"><br>
+				작성자 : <input class="writer" type="text"><br>
+				비밀번호 : <input class="password" type="text"><br>
+				제목 : <input class="title" type="text"><br>
+				내용 : <textarea class="content" rows="10" cols="60"></textarea> <br>
+				
+				<button onclick="clickbtn()">글 등록하기</button>
 			</div>
 		
-			<div>
+			<div  class="box">
 				<h3>글목록 페이지</h3>
-			
+				<table class="list">
+				
+				</table>
 			</div>
 			
-			<div>
+			<div class="box">
 				<h3>글보기 페이지</h3>
+				<div> 
+					제목 : <span class="ptitle" ></span>
+				</div>
+				<div> 
+					작성자 : <span class="pwriter"> </span>
+				</div>
+				<div> 
+					내용 : <span class="pcontent"> </span>
+				</div>
+				<div class="btn"> </div>
 			</div>
 			
 		</div>
