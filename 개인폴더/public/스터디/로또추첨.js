@@ -70,8 +70,6 @@ function lotto(){
 		rand.push(Math.floor((Math.random()*45)+1))
 		
 		
-		
-		
 	}
 	
 	
