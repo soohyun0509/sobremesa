@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 
@@ -42,31 +43,47 @@ public class Dao {
 			} catch (Exception e) {System.out.println("경고 ) 회원가입 오류 " + e);}
 			return false;
 		}//회원가입 메소드 end
+	
 	// 로그인 메소드
-	boolean login(CustomerDto dto) {
+	CustomerDto login(String id, String password) {
 		String sql="select * from customer where id= ? and password= ?";
+		CustomerDto dto=null;
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, dto.id);
-			ps.setString(2, dto.password);
-			rs=ps.executeQuery();
+			ps.setString(1, id);
+			ps.setString(2, password);
+			rs=ps.executeQuery(); // 테이블에 없는 id,password를 계속 where조건에 넣어주니까
+			//당연히 맞는값이 없으니까 결과가 하나도 안나오지!!
+			// 그러니까 이 밑에 if문을 통과할 수 없음!!!
 			if(rs.next()) {
-				CustomerDto dto2= new CustomerDto();
-				dto2.id= rs.getString(1);
-				dto2.password= rs.getString(2);
-				
-				if(dto.id == dto2.id) {
-					return true;
-				}
-				
+				dto= new CustomerDto();
+				dto.id= rs.getString(1);
+				dto.password= rs.getString(2);
+				return dto;
+				//
 			}
+			
 		} catch (Exception e) {System.out.println("경고 ) 로그인 오류 " + e);}
-		return false;
-	}
-	
+		return dto;// 애는 null이래 ..값이 아예 안담기나봐
+	}//아 진짜 뭐가 문제야...
+	// null 값을 계속 equals로 비교하고 앉았으니 계속 오류가 뜨지...
+	//page에서 !=null 해줬어야했어...
 	
 	
 	// 객실등록 메소드
+	boolean room_regist(RoomDto dto) {//매개변수 따로따로 써도 되긴하는데 어차피 풀생성자로 올거니까 사용
+		String sql="insert into room values(?, ?, ?)";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, dto.type);
+			ps.setString(2, dto.price);
+			ps.setInt(3, dto.num);
+			ps.executeUpdate();
+			 
+			return true;
+		} catch (Exception e) {System.out.println("경고 ) 객실등록 오류 " + e);}
+		return false;	
+	}//객실등록 메소드 end
 	
 	// 객실삭제 메소드
 
@@ -75,8 +92,25 @@ public class Dao {
 	// 체크인 메소드
 
 	// 모든 객실 조회 메소드
+	ArrayList<RoomDto> getRoomlist() {
+		String sql="select * from room";
+		ArrayList<RoomDto> list = new ArrayList<>();
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				RoomDto dto = new RoomDto(
+						rs.getString(1), 
+						rs.getString(2), 
+						rs.getInt(3)
+					);
+				list.add(dto);
+				}//while end
+			return list;
+		} catch (Exception e) {System.out.println("경고 ) 객실조회 오류 " + e);}
+		return list;
+	}//객실 조회 end
 
-	
 	// 예약 현황 조회 메소드
 
 	

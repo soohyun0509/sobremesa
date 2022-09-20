@@ -1,6 +1,6 @@
 package 호텔;
 
-
+import java.util.ArrayList;
 
 public class Controller {
 //로직 처리
@@ -14,15 +14,18 @@ public class Controller {
 	}
 	
 	// 로그인 메소드
-	boolean login(String id, String password) {
-		CustomerDto dto= new CustomerDto();
-		dto.id= id; dto.password=password;
-		boolean result= dao.login(dto);
+	CustomerDto login(String id, String password) {
+	
+		CustomerDto result= dao.login(id, password);
 		return result;
 	}
 	
 	// 객실등록 메소드
-
+	boolean room_regist(String type, String price, int num) {
+		RoomDto dto= new RoomDto(type, price, num);
+		boolean result=dao.room_regist(dto);
+		return result;
+	}
 	
 	// 객실삭제 메소드
 
@@ -33,7 +36,10 @@ public class Controller {
 
 
 	// 모든 객실 조회 메소드
-
+	ArrayList<RoomDto> getRoomlist() {
+		ArrayList<RoomDto> resultlist= dao.getRoomlist();
+		return resultlist;
+	}
 	
 	
 	// 예약 현황 조회 메소드
