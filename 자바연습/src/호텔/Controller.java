@@ -14,10 +14,13 @@ public class Controller {
 	}
 	
 	// 로그인 메소드
-	CustomerDto login(String id, String password) {
-	
+	boolean login(String id, String password) {
+		
 		CustomerDto result= dao.login(id, password);
-		return result;
+		if(result!=null && result.id.equals(id) && result.password.equals(password)) {
+			return true;
+		}
+		return false;
 	}
 	
 	// 객실등록 메소드
@@ -28,10 +31,26 @@ public class Controller {
 	}
 	
 	// 객실삭제 메소드
-
+	boolean room_delete(String type) {
+		boolean result= dao.room_delete(type);
+		return result;
+	}
 	
 	// 객실예약 메소드
-
+	boolean room_reserve(String name,  int num,String type) {
+		R_listDTO dto= new R_listDTO();
+		R_listDTO result= dao.room_reserve(dto);
+		if(result!=null && type.equals(result.type) && num <= result.num) {
+			return true;
+			//숫자 줄어든 거 db에 어떻게 업데이트시키냐...
+		}else return false;
+		
+		
+	}
+	
+	
+	
+	
 	// 체크인 메소드
 
 

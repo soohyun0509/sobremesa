@@ -86,9 +86,39 @@ public class Dao {
 	}//객실등록 메소드 end
 	
 	// 객실삭제 메소드
-
+	boolean room_delete(String type) {
+		String sql="delete from room where type=? ";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, type);
+			ps.executeUpdate();
+			
+			return true;
+		} catch (Exception e) {System.out.println("경고 ) 객실삭제 오류 " + e);}
+		return false;
+	}//삭제 메소드 end
+	
+	
+	
+	
 	// 객실예약 메소드
-
+	R_listDTO room_reserve(R_listDTO dto) {
+		String sql="insert into r_list values(?,?,?)";
+		
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, dto.name);
+			ps.setInt(2, dto.num);
+			ps.setString(3, dto.type);
+			ps.executeUpdate();
+			return dto;
+			
+		} catch (Exception e) {System.out.println("경고 ) 예약 오류 " + e);}
+		return dto;
+	}// 예약 메소드 end
+	
+	
+	
 	// 체크인 메소드
 
 	// 모든 객실 조회 메소드
