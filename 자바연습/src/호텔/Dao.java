@@ -102,7 +102,7 @@ public class Dao {
 	
 	
 	// 객실예약 메소드
-	R_listDTO room_reserve(R_listDTO dto) {
+	boolean room_reserve(R_listDTO dto) {
 		String sql="insert into r_list values(?,?,?)";
 		
 		try {
@@ -111,10 +111,10 @@ public class Dao {
 			ps.setInt(2, dto.num);
 			ps.setString(3, dto.type);
 			ps.executeUpdate();
-			return dto;
+			return true;
 			
 		} catch (Exception e) {System.out.println("경고 ) 예약 오류 " + e);}
-		return dto;
+		return false;
 	}// 예약 메소드 end
 	
 	

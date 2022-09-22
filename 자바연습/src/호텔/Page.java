@@ -87,7 +87,7 @@ public class Page {
 		boolean result= controller.room_reserve(name, num,type);
 		if(result) {System.out.println("예약 성공 했습니다.");}
 		else {System.out.println("예약이 완료되지 못했습니다.");}
-	
+	 
 		
 	}
 	//5. 체크인 화면 출력

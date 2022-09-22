@@ -38,16 +38,19 @@ public class Controller {
 	
 	// 객실예약 메소드
 	boolean room_reserve(String name,  int num,String type) {
+		ArrayList<RoomDto> resultlist= dao.getRoomlist();
 		R_listDTO dto= new R_listDTO();
-		R_listDTO result= dao.room_reserve(dto);
-		if(result!=null && type.equals(result.type) && num <= result.num) {
-			return true;
+		boolean result=false;
+		for(RoomDto list : resultlist) {
+			if(list.type.equals(dto.type) && list.num >=dto.num ) {
+				result= dao.room_reserve(dto);
+			}
+		}
+		return result;
 			//숫자 줄어든 거 db에 어떻게 업데이트시키냐...
-		}else return false;
-		
-		
 	}
 	
+
 	
 	
 	
