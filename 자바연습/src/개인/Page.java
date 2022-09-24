@@ -1,4 +1,4 @@
-package 호텔;
+package 개인;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -82,9 +82,9 @@ public class Page {
 		page.p_getRoomlist();
 		System.out.println("예약자(실투숙자) 성명 : "); String name=scanner.next();
 		System.out.print("예약할 객실 타입 : "); String type=scanner.next();
-		System.out.print("객실 수 : ");		int num=scanner.nextInt();
+		System.out.print("객실 수 : ");		int amount=scanner.nextInt();
 		
-		boolean result= controller.room_reserve(name, num,type);
+		boolean result= controller.room_reserve(name, type,amount);
 		if(result) {System.out.println("예약 성공 했습니다.");}
 		else {System.out.println("예약이 완료되지 못했습니다.");}
 	 
@@ -100,9 +100,9 @@ public class Page {
 	void p_room_regist() {
 		System.out.print("객실 타입 : "); String type=scanner.next();
 		System.out.print("객실 가격 : "); String price=scanner.next();
-		System.out.print("객실 개수 : "); int num=scanner.nextInt();
+		System.out.print("객실 개수 : "); int amount=scanner.nextInt();
 		
-		boolean result = controller.room_regist(type, price, num);
+		boolean result = controller.room_regist(type, price, amount);
 		if(result) {System.out.println("객실 등록 완료했습니다.");}
 		else {System.out.println("객실 등록 실패했습니다. 다시 시도해주세요");}
 		
@@ -129,7 +129,7 @@ public class Page {
 	void p_getRoomlist() {
 		ArrayList<RoomDto> result= controller.getRoomlist();
 		for(RoomDto dto : result) {
-			System.out.print("객실타입: " + dto.type +"\t가격 : " +dto.price+ "\t잔여 : " +dto.num+"\n");
+			System.out.print("객실타입: " + dto.type +"\t가격 : " +dto.price+ "\t잔여 : " +dto.amount+"\n");
 		}
 	}// 객실 리스트 end
 	

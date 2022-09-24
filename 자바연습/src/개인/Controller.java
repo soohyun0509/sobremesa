@@ -1,4 +1,4 @@
-package 호텔;
+package 개인;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public class Controller {
 	static Dao dao= new Dao();
 	// 회원가입 메소드
 	boolean signup(String id, String password, String name, String phone) {
-		CustomerDto dto = new CustomerDto(id, password, name, phone);
+		CustomerDto dto = new CustomerDto(0,id, password, name, phone);
 		boolean result= dao.sign_up(dto);
 		return result;
 	}
@@ -24,8 +24,8 @@ public class Controller {
 	}
 	
 	// 객실등록 메소드
-	boolean room_regist(String type, String price, int num) {
-		RoomDto dto= new RoomDto(type, price, num);
+	boolean room_regist(String type, String price, int amount) {
+		RoomDto dto= new RoomDto(type, price, amount);
 		boolean result=dao.room_regist(dto);
 		return result;
 	}
@@ -37,12 +37,12 @@ public class Controller {
 	}
 	
 	// 객실예약 메소드
-	boolean room_reserve(String name,  int num,String type) {
+	boolean room_reserve(String name, String type, int amount) {
 		ArrayList<RoomDto> resultlist= dao.getRoomlist();
 		R_listDTO dto= new R_listDTO();
 		boolean result=false;
 		for(RoomDto list : resultlist) {
-			if(list.type.equals(dto.type) && list.num >=dto.num ) {
+			if(list.type.equals(dto.type) && list.amount >=dto.amount ) {
 				result= dao.room_reserve(dto);
 			}
 		}

@@ -1,21 +1,24 @@
-package 호텔;
+package 개인;
 
 public class R_listDTO {
 	
+	int amount;
 	String name;
-	int num;
 	String type;
 	
 	
 	public R_listDTO() {}
 
 
-	public R_listDTO(String name, int num, String type) {
+	public R_listDTO(int amount, String name, String type) {
 		super();
+		this.amount = amount;
 		this.name = name;
-		this.num = num;
 		this.type = type;
 	}
+
+
+
 
 
 	

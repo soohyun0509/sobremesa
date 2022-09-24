@@ -1,9 +1,10 @@
-package 호텔;
+package 개인;
 
 public class CustomerDto {
 
 	
 	//1. 필드
+	int c_no;
 	String id;
 	String password;
 	String name;
@@ -12,8 +13,9 @@ public class CustomerDto {
 	//2. 생성자
 	public CustomerDto() {}
 
-	public CustomerDto(String id, String password, String name, String phone) {
+	public CustomerDto(int c_no, String id, String password, String name, String phone) {
 		super();
+		this.c_no = c_no;
 		this.id = id;
 		this.password = password;
 		this.name = name;
@@ -21,7 +23,6 @@ public class CustomerDto {
 	}
 
 
-	
 	
 	
 	//3. 메소드

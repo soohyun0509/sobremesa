@@ -1,22 +1,19 @@
-package 호텔;
+package 개인;
 
 public class RoomDto {
 
 	String type;
 	String price;
-	int num;
+	int amount;
 		
 	public RoomDto() {}
 
-	public RoomDto(String type, String price, int num) {
+	public RoomDto(String type, String price, int amount) {
 		super();
 		this.type = type;
 		this.price = price;
-		this.num = num;
+		this.amount = amount;
 	}
-	
-	
-	
 	
 	
 }

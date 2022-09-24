@@ -1,4 +1,4 @@
-package 호텔;
+package 개인;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,7 +22,7 @@ public class Dao {
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/hotel",
 					"root",
-					"1234");
+					"123456");
 		} catch (Exception e) {System.out.println("경고 ) DB 접속 오류" + e);}
 		
 		
@@ -30,7 +30,7 @@ public class Dao {
 	
 	// 회원가입 메소드
 	boolean sign_up(CustomerDto dto) {
-			String sql="insert into customer(id, password, name, phone) values(?,?,?,?)";
+			String sql="insert into customer(c_no,id, password, name, phone) values(null,?,?,?,?)";
 			try {
 				ps=con.prepareStatement(sql);
 				ps.setString(1, dto.id);
@@ -77,7 +77,7 @@ public class Dao {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, dto.type);
 			ps.setString(2, dto.price);
-			ps.setInt(3, dto.num);
+			ps.setInt(3, dto.amount);
 			ps.executeUpdate();
 			 
 			return true;
@@ -108,7 +108,7 @@ public class Dao {
 		try {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, dto.name);
-			ps.setInt(2, dto.num);
+			ps.setInt(2, dto.amount);
 			ps.setString(3, dto.type);
 			ps.executeUpdate();
 			return true;
