@@ -24,7 +24,7 @@ public class Controller {
 	}
 	
 	// 객실등록 메소드
-	boolean room_regist(String type, String price, int amount) {
+	boolean room_regist(String type, int price, int amount) {
 		RoomDto dto= new RoomDto(type, price, amount);
 		boolean result=dao.room_regist(dto);
 		return result;
@@ -36,26 +36,45 @@ public class Controller {
 		return result;
 	}
 	
+	//객실수정 메소드
+	boolean roomUpdate(String type, int price, int amount) {
+		RoomDto dto =new RoomDto(type,price,amount);
+		return dao.roomUpdate(dto);
+	}
+	
+	
 	// 객실예약 메소드
-	boolean room_reserve(String name, String type, int amount) {
+	boolean room_reserve(int r_num,int amount,String name, String type ) {
+		
 		ArrayList<RoomDto> resultlist= dao.getRoomlist();
-		R_listDTO dto= new R_listDTO();
+		R_listDTO dto= new R_listDTO(0,amount,name,type);
 		boolean result=false;
 		for(RoomDto list : resultlist) {
 			if(list.type.equals(dto.type) && list.amount >=dto.amount ) {
-				result= dao.room_reserve(dto);
+				result= dao.room_reserve(dto); 
+				if(result) {
+					result= dao.room_update( type,(list.amount-dto.amount));
+				
+					return result;
+					
+				}
 			}
 		}
-		return result;
-			//숫자 줄어든 거 db에 어떻게 업데이트시키냐...
+		return false;
+		
 	}
-	
-
 	
 	
 	
 	// 체크인 메소드
-
+	ArrayList<R_listDTO> checkInlist(String name) {
+		return dao.checkInlist(name);
+	}
+	boolean checkIn(int reserve_no) {
+		return dao.checkIn(reserve_no);
+	}
+	
+	
 
 	// 모든 객실 조회 메소드
 	ArrayList<RoomDto> getRoomlist() {
@@ -65,6 +84,8 @@ public class Controller {
 	
 	
 	// 예약 현황 조회 메소드
-
+	ArrayList<R_listDTO> getReservelist() {
+		return dao.getReservelist();
+	}
 	
 }

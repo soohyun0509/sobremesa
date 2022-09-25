@@ -57,8 +57,8 @@ public class Dao {
 			// 그러니까 이 밑에 if문을 통과할 수 없음!!!
 			if(rs.next()) {
 				dto= new CustomerDto();
-				dto.id= rs.getString(1);
-				dto.password= rs.getString(2);
+				dto.id= rs.getString(2);
+				dto.password= rs.getString(3);
 				return dto;
 				//
 			}
@@ -76,7 +76,7 @@ public class Dao {
 		try {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, dto.type);
-			ps.setString(2, dto.price);
+			ps.setInt(2, dto.price);
 			ps.setInt(3, dto.amount);
 			ps.executeUpdate();
 			 
@@ -98,17 +98,29 @@ public class Dao {
 		return false;
 	}//삭제 메소드 end
 	
-	
+	//객실 수정 메소드
+	boolean roomUpdate(RoomDto dto) {
+		String sql="update room set price=? , amount=? where type=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, dto.price);
+			ps.setInt(2,dto.amount );
+			ps.setString(3, dto.type);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println("경고 ) 객실수정오류 " + e);}
+		return false;
+	}
 	
 	
 	// 객실예약 메소드
 	boolean room_reserve(R_listDTO dto) {
-		String sql="insert into r_list values(?,?,?)";
+		String sql="insert into r_list values(null,?,?,?)";
 		
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, dto.name);
-			ps.setInt(2, dto.amount);
+			ps.setInt(1, dto.amount);
+			ps.setString(2, dto.name);
 			ps.setString(3, dto.type);
 			ps.executeUpdate();
 			return true;
@@ -117,10 +129,51 @@ public class Dao {
 		return false;
 	}// 예약 메소드 end
 	
+	//객실 수 차감 메소드
+	boolean room_update( String type,int amount) {
+		String sql="update room set amount=? where type=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, amount);
+			ps.setString(2, type);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println("경고 ) 객실 수 변경 오류 " + e);}
+		return false;
 	
+	}
 	
 	// 체크인 메소드
-
+	ArrayList<R_listDTO> checkInlist(String name) {
+		String sql="select * from r_list where name=?";
+		ArrayList<R_listDTO> list= new ArrayList<>();
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, name);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				R_listDTO dto= new R_listDTO(
+						rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4)
+						);
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {System.out.println("경고 ) 체크인 오류 " + e);}
+		return list;
+	}
+	// 체크인 메소드
+	boolean checkIn(int reserve_no) {
+		String sql="delete from r_list where reserve_no=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, reserve_no);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e)  {System.out.println("경고 ) 체크인 오류 " + e);}
+		return false;
+	}
+	
+	
 	// 모든 객실 조회 메소드
 	ArrayList<RoomDto> getRoomlist() {
 		String sql="select * from room";
@@ -131,7 +184,7 @@ public class Dao {
 			while(rs.next()) {
 				RoomDto dto = new RoomDto(
 						rs.getString(1), 
-						rs.getString(2), 
+						rs.getInt(2), 
 						rs.getInt(3)
 					);
 				list.add(dto);
@@ -142,6 +195,24 @@ public class Dao {
 	}//객실 조회 end
 
 	// 예약 현황 조회 메소드
-
+	ArrayList<R_listDTO> getReservelist(){
+		String sql="select * from r_list";
+		ArrayList<R_listDTO> list = new ArrayList<>();
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				R_listDTO dto=new R_listDTO(
+						rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4)
+						);
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {System.out.println("경고 ) 예약현황 조회 오류 " + e);}
+		return list;
+	}
+	
+	
+	
 	
 }// class end
