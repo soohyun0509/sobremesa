@@ -1,8 +1,12 @@
 package teamProject.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import teamProject.controller.NationController;
+
+import teamProject.controller.PlayerController;
+import teamProject.model.DTO.NationDTO;
 
 //메인 뷰 클래스
 public class MainView {
@@ -12,8 +16,8 @@ public class MainView {
 	int player1Pause = 0;						//플레이어1의 무인도에 갖힌 턴
 	int player2Pause = 0;						//플레이어2의 무인도에 갖힌 턴
 	
-	NationController controller = new NationController();
-	
+	NationController nCon = new NationController();
+	PlayerController pCon = new PlayerController();
 	public static void main(String[] args) {
 		new MainView().play();
 		
@@ -23,7 +27,9 @@ public class MainView {
 	void play() {
 		addPlayer();
 		while(true) {	//count에 따라서 무한반복 종료
-			
+			showBoard();
+			isExistLandlord(1,1);
+			break;
 		}
 	}
 	
@@ -53,7 +59,17 @@ public class MainView {
 		System.out.println("╰─────────╯");
 		//for 세로줄 4개
 		
-		
+		ArrayList<NationDTO> list=nCon.getNations();
+		for(NationDTO dto : list) {
+			
+			System.out.print("╭─────────╮"+"\n");
+			System.out.print("           "+"\n");
+			System.out.print("   "+dto.getN_name()+"\n");
+			System.out.print("            "+"\n"); 
+			System.out.print("   "+dto.getP_no()+"\n");
+			System.out.print("           "+"\n");
+			System.out.print("╰─────────╯"+"\n");
+		}	
 	}
 
 	//4. 주사위(1~6) 메소드
@@ -74,11 +90,11 @@ public class MainView {
 	void isExistLandlord(int player, int n_no) {
 	//요기 int로 돼있었는데 반환값을 쓸곳을 못찾아서 일단 void로 바꿔놨어요!
 		
+		int p_turn=pCon.getWhoIsTurn();
 		//플레이어번호를 어떻게 넘겨줘야하는걸까...
-		//그래서 생각한건데 그냥 플레이어1 플레이어2 메소드를 각각 만들어줘서 그 안에다가 각각 메소드들 실행시켜주면
-		// 플레이어 번호 넘기기 쉽지 않을까 하는 그런...
+
 		//1: 플레이어1 땅 / 2: 플레이어2 땅 / null: 땅 주인 없음
-		int p_no=controller.isExistLandlord(n_no);
+		int p_no=nCon.isExistLandlord(n_no);
 		
 		if(p_no==0) {buyLand(player,n_no);}//땅 주인 없음
 		else if(player==p_no) {return;}// 내 땅-> 차례종료 //차례종료되는데에 count++ 해줘야하나
@@ -89,7 +105,7 @@ public class MainView {
 	void buyLand(int player, int n_no) {
 		//플레이어 정보 가져오는 로직 실행해서 잔고 되는지 확인!
 		
-		boolean result= controller.buyLand(player,n_no);
+		boolean result= nCon.buyLand(player,n_no);
 		if(result) {System.out.println("구매 완료 됐습니다.");}
 		else {System.out.println("구매 실패 했습니다.");}
 		

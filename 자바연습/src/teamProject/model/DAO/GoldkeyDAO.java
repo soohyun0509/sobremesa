@@ -11,7 +11,7 @@ public class GoldkeyDAO {
 	private static GoldkeyDAO dao = new GoldkeyDAO();
 	private GoldkeyDAO() {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/team","root","123456");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/team","root","1234");
 		} catch (SQLException e) { e.printStackTrace(); }
 	}
 	public static GoldkeyDAO getInstance() { return dao; }

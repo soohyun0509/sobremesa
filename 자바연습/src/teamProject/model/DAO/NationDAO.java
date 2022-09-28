@@ -1,6 +1,7 @@
 package teamProject.model.DAO;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import teamProject.model.DTO.NationDTO;
 
@@ -12,12 +13,29 @@ public class NationDAO {
 	private static NationDAO dao = new NationDAO();
 	private NationDAO() {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/team","root","123456");
-		} catch (SQLException e) { e.printStackTrace(); }
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/team","root","1234");
+		} catch (Exception e) { System.out.println("DB연결오류 " +e); }
 	}
 	public static NationDAO getInstance() { return dao; }
 
-	
+	//전체 나라 가져오는 로직
+	public ArrayList<NationDTO> getNations(){
+		String sql="select * from nation";
+		NationDTO dto=null;
+		ArrayList<NationDTO> list = new ArrayList<>();
+		
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				dto=new NationDTO(
+						rs.getInt(1), rs.getString(2), rs.getInt(3),rs.getInt(4),rs.getInt(5));
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {System.out.println("나라 정보 출력 오류 " +e);}
+		return list;
+	}
 	
 	
 	//수현 - 이동한 땅의 주인 존재 여부 확인 로직

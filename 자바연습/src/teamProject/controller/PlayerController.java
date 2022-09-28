@@ -1,5 +1,7 @@
 package teamProject.controller;
 
+import teamProject.model.DAO.PlayerDAO;
+
 public class PlayerController {
 	// 플레이어 등록 로직
 	boolean addPlayer(String name) {
@@ -12,8 +14,10 @@ public class PlayerController {
 	}
 	
 	// 누구 턴인지 가져오는 로직
-	int getWhoIsTurn() {
-		return 0;
+	public int getWhoIsTurn() {
+		
+		return PlayerDAO.getInstance().getWhoIsTurn();
+		
 	}
 	
 	// 말 이동 로직

@@ -15,6 +15,7 @@ public class GoldkeyController {
 	
 	//소유하고 있는 황금열쇠 목록 가져오기 로직
 	GoldkeyDTO goldKeyList(int player) {
+		
 		return null;
 	}
 	
