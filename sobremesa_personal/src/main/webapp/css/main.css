@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+
+/* ----------------------- 메인이미지 ------------------------ */
+#main_img{ 
+	background-image: url("../image/리조또.jpg");
+	width: 100%; height: 400px;
+	background-repeat: no-repeat; /* 자동채우기 제거 */
+	background-position: top center; /* 박스권 배경 이미지 정렬 */
+	text-align: center; }
+.main_text{
+	height: 200px;
+	padding-top: 100px;
+	text-align: center;
+	color: white;
+}
+.main_text h3{font-size: 60px;  margin-top: 65px;}
+.main_text p{font-size: 23px;   margin-top: 30px;}
+ 
+/*------------------------ 배너 ------------------*/
+#banners{ height: 700px; }
+.banner_box{ width: 1200px; margin: 0 auto; }
+.bn_col1 img{ width: 100%; height: 330px; }
+.banner{ float: left; width: 1200px; margin: 50px 30px; }
+
+.bn_col1{
+	float: left;
+	width: 500px;
+	height: 300px;
+	margin-left: 100px;
+}
+.bn_col2{
+	float: left;
+	width: 450px;
+	padding: 20px;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+.bn_col2 h3{ padding: 10px 0; font-size: 20px; }
+.bn_col li{ font-size: 15px; margin: 15px 0; }
+
+/* ----------------------- 서브페이지 소개  ------------------------ */
+#sub_items{ clear: both;  background-color: #D6E0F0; width: 100%; height: 300px; }
+.item{ float: left; width: 250px; margin: 50px 20px; }
+.item img{ width: 100%; }
+
+/*---------------------- 지도 ----------------------------------*/
+#map{
+	background-color: #F1F3F8;
+	display: center;
+	padding-left: 450px;
+}
+#map p {
+	float: left;
+}
+
+
+/* --------------------- 플로팅박스  ---------------------- */
+#floatingbox{
+	width: 12rem; 
+	/* height: 168px; */
+	position: sticky;
+	left: 50px; 
+	top: 550px;
+	/* background-color: #393B44; */
+	z-index: 10;
+	opacity: 0.8;				/* 투명도 */
+	box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, .4);
+	text-align: center;
+}
+.floatContainer{
+	height: 168px;
+	background-color: #393B44;
+}
+.floatTop{
+	width:100%;
+	height:50px;
+	background-color: #D6E0F0;
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+	display: flex;
+	padding: 10px 2px;
+}
+.topTitle, .colse{ margin-top: 17px; margin-left: 4px; }
+.floatBottom{
+	padding-top: 10px;
+	background-color: #F1F3F8;
+	margin-top: 3px;
+}

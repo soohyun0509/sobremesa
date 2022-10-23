@@ -1,41 +1,6 @@
 @charset "UTF-8";
 
 
-/*
-#F1F3F8
-#D6E0F0
-#8D93AB
-#393B44
-*/
-
-
-@font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-/* css 기본 설정 */
-
-*{ margin : 0; padding: 0;}
-
-
-li{ list-style-type: none; }
-.box{ width: 1200px; margin: 0 auto; position: relative; }
-/* ------------------------ 헤더 ----------------------------*/
-#header{ height: 120px; background: white; font-family: 'GangwonEdu_OTFBoldA';}
-.logo{ position: absolute; top:20px; left: 20px; }
-.hd_img{ width:90px; height: 80px; } /* 로고이미지 */
-
-.menus{ float: right; text-align: right;}
-.menus li{ display: inline; }
-.top_menu{ margin: 30px 0px;}
-.main_menu{ background: #D6E0F0; padding: 10px;}
-.main_menu li a{
-	font-size: 20px; margin-left: 100px; 
-}
-
-
 /*----갤러리 전체 박스-----------*/
 
 
@@ -148,32 +113,3 @@ li{ list-style-type: none; }
 	font-weight: 900;
 	padding-right: 10px;
 }
-
-
-/* ----------------------- 푸터  ------------------------ */
-#footer{ 
-	clear: both;
-	background-color:#393B44; /* 배경색 */
-	color: white;   /* 글자색 */
-	height: 250px;
-	padding: 50px;
-	font-family: 'GangwonEdu_OTFBoldA';
-}
-.ft_item a{color: black;}
-.ft_item{
-	float: left;
-	width: 380px;
-	margin-top: 50px;
-}
-.ft_item li{ display: inline; }
-.ft_item ul{ margin-bottom: 20px; font-size: 20px; }
-.ft_item a:hover{ color: #F1F3F8; }
-
-
-.ft_sns{
-	display: inline-block;
-	width: 380px;
-	margin-top: 50px;
-	text-align: center;
-}
-.ft_sns img{ margin-left: 15px;}

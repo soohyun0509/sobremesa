@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAO;
+
 
 @WebServlet("/member/signin")
 public class signin extends HttpServlet {
@@ -20,8 +22,14 @@ public class signin extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		// 세션 저장하기	
+		
+		String id=request.getParameter("id");
+		String password=request.getParameter("password");
+	
+		
+	
 	}
 
 

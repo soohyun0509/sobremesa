@@ -4,18 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 	
 	
-	<!-- 아이콘 폰트 -->
-	<script src="https://kit.fontawesome.com/3367894b6f.js" crossorigin="anonymous"></script>
-	<!-- FontAwesome에서 제공하는 글머리 기호로 많이 쓰이는 아이콘 -->
-	<script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
-	<!-- css 기본 초기화 -->
-	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
 	<link href="../css/signup.css" rel="stylesheet">
 </head>
 <body>
+
+	<%@include file="../header.jsp" %>
+
 	<!-- 본문 -->
 	<section>
 		<div class="wrap">
@@ -34,78 +30,43 @@
 							<tr class="signup_input">
 								<td class="title">아이디</td>
 								<td class="input_box">
-									<span class="input_field">
-										<input class="signup_id" type="text">
-									</span>
-									4~12자로 입력
+									<input class="signup_id" type="text" onkeyup="checkId()">
+									<span class="check"></span>
 								</td>
+								
 							</tr>
 							<tr class="signup_input">
 								<td class="title">비밀번호</td>
 								<td>
-									<span class="input_field">
-										<input class="signup_pw" type="password">
-									</span>
-									4~12자로 입력
+									<input class="signup_pw" type="password" onkeyup="checkPassword()">
+									<span class="check"></span>
 								</td>
 							</tr>
 							<tr class="signup_input">
 								<td class="title">비밀번호 확인</td>
 								<td>
-									<span>
-										<input class="signup_pw" type="password">
-									</span>
+									<input class="signup_pw_confirm" type="password" onkeyup="checkPassword2()">
+									<span class="check"></span>
+									
 								</td>
 							</tr>
 							<tr class="signup_input">
 								<td class="title">이름</td>
 								<td>
-									<span>
-										<input class="signup_name" type="text">
-									</span>
+									<input class="signup_name" type="text" onkeyup="checkName()">
+									<span class="check"></span>
 								</td>
 							</tr>
 							<tr class="signup_input">
 								<td class="title">이메일</td>
 								<td>
-									<span class="email_field">
-										<input class="signup_email" type="text">@
-										<div class="select_box">
-											<select>
-												<option>이메일 선택</option>
-												<option>gmail.com</option>
-												<option>naver.com</option>
-												<option>nate.com</option>
-											</select>
-										</div>
-									</span>
+									<input class="signup_email" type="text" onkeyup="checkEmail()">
+									<span class="check"></span>
 								</td>
-							<tr class="signup_input">
-								<td class="title">생년월일</td>
-								<td class="input_birth">
-									<span class="birth_item">
-										<input class="signup_year" type="text" placeholder="년(4자)">
-										<span>년</span>
-									</span>
-									<span class="birth_item">
-										<select class="signup_month">
-											<option>월 ▼</option>
-											<option>1</option> <option>2</option> <option>3</option> <option>4</option>
-											<option>5</option> <option>6</option> <option>7</option> <option>8</option>
-											<option>9</option> <option>10</option> <option>11</option> <option>12</option>
-										</select>
-										<span>월</span>
-									</span>
-									<span class="birth_item">
-										<input class="signup_day" type="text" placeholder="일(2자)">
-										<span>일</span>
-									</span>
-								</td>
-							</tr>
 						</table>
 						
 						<div class="btn_box">
-							<a href="../signin/signin.html" > <button class="btn"> 회원가입 </button></a>
+							<button onclick="signup()" class="signBtn"> 회원가입 </button>
 						</div>
 						
 						<span class="signup_sns">
@@ -124,6 +85,8 @@
 		</div>
 	</section>
 	
+	<%@include file="../footer.jsp" %>
 	
+	<script type="text/javascript" src="/sobremesa_personal/js/member/signup.js"></script>
 </body>
 </html>
