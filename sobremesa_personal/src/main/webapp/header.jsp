@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>SOBREMESA</title>
+
+	<!-- SweetAlert2 테마 -->
+	<link rel="stylesheet" href="sweetalert2.min.css">
 	<!-- 아이콘 폰트 -->
 	<script src="https://kit.fontawesome.com/3367894b6f.js" crossorigin="anonymous"></script>
 	<!-- FontAwesome에서 제공하는 글머리 기호로 많이 쓰이는 아이콘 -->
@@ -41,5 +44,7 @@
     
     	<!-- JQUERY 자바를 편하게 사용하기 위한 라이브러리 -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script> 
+		<!-- SweetAlert2 테마 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 </html>

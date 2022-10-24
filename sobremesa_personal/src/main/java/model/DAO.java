@@ -18,7 +18,7 @@ public class DAO {
 			con=DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sobremesa",
 					"root",
-					"123456");
+					"1234");
 		} catch (Exception e) {System.out.println("DB연결 오류" +e);}
 		
 	}
@@ -27,12 +27,12 @@ public class DAO {
 	
 	// 1. 회원가입
 	public boolean signup(DTO dto) {
-		String sql="insert into member values(?,?,?,?)";
+		String sql="insert into member values(0,?,?,?,?)";
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, dto.getName());
-			ps.setString(2, dto.getId());
-			ps.setString(3, dto.getPassword());
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getPassword());
+			ps.setString(3, dto.getName());
 			ps.setString(4, dto.getEmail());
 			ps.executeUpdate(); return true;
 		} catch (Exception e) {System.out.println("회원가입 DB 오류" +e);} return false;

@@ -30,7 +30,7 @@ public class singup extends HttpServlet {
 		String id=request.getParameter("id");
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
-		DTO dto= new DTO(name, id, password, email);
+		DTO dto= new DTO(0, id, password, name, email);
 		boolean result=DAO.getInstance().signup(dto);
 		response.getWriter().print(result);
 	

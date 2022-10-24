@@ -54,7 +54,8 @@ function checkEmail(){
 	else{check[4].innerHTML=n+" 이메일 형식으로 입력해주세요"; Cemail=false;}
 }
 
-
+// 이메일 중복체크도 하면 좋겠다...
+// 아이디 중복체크 해야돼...
 /*---------------- 유효성 결과 확인하고 DB저장 --------------------- */
 function signup(){
 	if(!(Cname&&Cid&&Cpassword&&Cemail)){alert("모든 정보를 입력해주세요"); return;}
@@ -70,7 +71,15 @@ function signup(){
 		url:"/sobremesa_personal/member/singup",
 		data: data,
 		success: function(re){
-			alert(re)
+			if(re=='true'){
+				Swal.fire({
+			      icon: 'success',
+			      title: '회원가입 됐습니다.',
+			      text: `로그인 페이지로 이동합니다.`
+				});
+				// 이거 텀을 줘야되는데...
+				location.href="/sobremesa_personal/member/signin.jsp";
+			}
 		}
 	})
 

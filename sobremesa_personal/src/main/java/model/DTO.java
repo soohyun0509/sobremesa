@@ -2,29 +2,31 @@ package model;
 
 public class DTO {
 
-	private String name;
+	private int mno;
 	private String id;
 	private String password;
+	private String name;
 	private String email;
 	
 	public DTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DTO(String name, String id, String password, String email) {
+	public DTO(int mno, String id, String password, String name, String email) {
 		super();
-		this.name = name;
+		this.mno = mno;
 		this.id = id;
 		this.password = password;
+		this.name = name;
 		this.email = email;
 	}
 
-	public String getName() {
-		return name;
+	public int getMno() {
+		return mno;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
 
 	public String getId() {
@@ -43,6 +45,14 @@ public class DTO {
 		this.password = password;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -53,8 +63,10 @@ public class DTO {
 
 	@Override
 	public String toString() {
-		return "DTO [name=" + name + ", id=" + id + ", password=" + password + ", email=" + email + "]";
+		return "DTO [mno=" + mno + ", id=" + id + ", password=" + password + ", name=" + name + ", email=" + email
+				+ "]";
 	}
+	
 	
 	
 	
