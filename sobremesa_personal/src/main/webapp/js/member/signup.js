@@ -15,8 +15,17 @@ let Cemail=false;
 function checkId(){
 	let id=document.querySelector(".signup_id").value;
 	let $id=/^[a-zA-Z0-9]{4,12}$/
-	if($id.test(id)){check[0].innerHTML=y; Cid=true;}
-	else{check[0].innerHTML=n+" 영어,숫자로 이루어진 4~12자 이내"; Cid=false;}
+	if($id.test(id)){
+		$.ajax({ // 아이디 중복체크
+		url:"/sobremesa_personal/member/idcheck",
+		data: {"id" : id},
+		success: function(re){
+				console.log(re)
+				if(re=='true'){check[0].innerHTML=n+"이미 사용중인 아이디입니다."}
+				else{check[0].innerHTML=y; Cid=true;}
+			}
+		})
+	}else{check[0].innerHTML=n+" 영어,숫자로 이루어진 4~12자 이내"; Cid=false;}
 	
 }
 /*---------- 비밀번호 유효성 -------------- */
@@ -50,8 +59,16 @@ function checkName(){
 function checkEmail(){
 	let email=document.querySelector(".signup_email").value;
 	let $email=/^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/
-	if($email.test(email)){check[4].innerHTML=y; Cemail=true;}
-	else{check[4].innerHTML=n+" 이메일 형식으로 입력해주세요"; Cemail=false;}
+	if($email.test(email)){
+		$.ajax({
+			url:"/sobremesa_personal/member/emailcheck",
+			data:{"email" : email},
+			success: function(re){
+				if(re=='true'){check[4].innerHTML=n+"이미 사용중인 이메일입니다."}
+				else{check[4].innerHTML=y; Cemail=true;}
+			}
+		})
+	}else{check[4].innerHTML=n+" 이메일 형식으로 입력해주세요"; Cemail=false;}
 }
 
 // 이메일 중복체크도 하면 좋겠다...

@@ -38,6 +38,22 @@ public class DAO {
 		} catch (Exception e) {System.out.println("회원가입 DB 오류" +e);} return false;
 	}
 	
+	// id중복체크
+	public boolean idcheck(String id) {
+		String sql="select * from member where id=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs=ps.executeQuery();
+			if(rs.next()) {return true;}
+		} catch (Exception e) {System.out.println("id 중복체크 오류" +e);}return false; 
+	}
+	
+	// email 중복 체크
+	public boolean emailcheck(String email) {
+		String sql="select * from member where
+	}
+	
 	
 	
 }

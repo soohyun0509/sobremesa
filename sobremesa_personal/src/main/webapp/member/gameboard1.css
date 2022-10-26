@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+*{
+	border: 1px solid black;
+}
+
+
+.boardbox { /*게임판 박스*/
+	display: grid;
+	grid-template-columns: 120px repeat(7, 106px) 120px; /*각각 그리드비율 정하기*/
+	grid-template-rows: 120px repeat(7, 106px) 120px;
+	grid-gap: 2px;	/*그리드간 간격*/
+	margin: 50px auto;
+	width: 1000px;
+	height: 1000px;
+	border: 2px solid black;
+}
+.b_center { /*게임판 가운데*/
+	grid-column: 2 / 11;
+	grid-row: 2 / 11;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+
+.horizontal-row { /*가로 게임칸*/
+	grid-template-columns: repeat(9, 80px);
+	grid-template-rows: 125px;
+}
+
+.vertical-row {  /*세로 게임칸*/
+	grid-template-columns: 125px;
+	grid-template-rows: repeat(9, 80px);
+
+
+}
+.bottom-row {/*아랫줄*/
+	grid-column: 2 / 11;
+	grid-row: 11;
+}
+
+.left-row { /*왼쪽*/
+	grid-column: 1;
+	grid-row: 2 / 11;
+
+
+}
+.right-row { /*오른쪽*/
+	grid-column: 11;
+	grid-row: 2 / 11;
+
+
+}
+.top-row { /*윗 줄*/
+	grid-column: 2 / 11;
+	grid-row: 1;
+
+
+}
