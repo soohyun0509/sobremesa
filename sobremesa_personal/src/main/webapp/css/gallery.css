@@ -57,7 +57,7 @@
 .divs{
 	display: none;
 	position: absolute;
-	top: 70px; left: 65px;
+	top: 70px; left: 50px;
 	font-family: 'GangwonEdu_OTFBoldA';
 	font-size: 25px;
 }
@@ -75,8 +75,9 @@
 	font-family: 'GangwonEdu_OTFBoldA';
 	text-align: center;
 }
-.pagination a:hover{
+.pagination li:hover{
 	color: #393B44;
+	cursor: pointer;
 }
 
 

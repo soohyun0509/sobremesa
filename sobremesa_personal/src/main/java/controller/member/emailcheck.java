@@ -24,8 +24,8 @@ public class emailcheck extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String email=request.getParameter("email");
-		DAO.getInstance().emailcheck(email);
-		
+		boolean result=DAO.getInstance().emailcheck(email);
+		response.getWriter().print(result);
 	
 	}
 

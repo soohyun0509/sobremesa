@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import model.DAO;
 
@@ -24,12 +25,16 @@ public class signin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		// 세션 저장하기	
-		
+		// 로그인 정확히 되면 세션에 저장해야지...
 		String id=request.getParameter("id");
 		String password=request.getParameter("password");
 	
-		
-	
+		boolean result=DAO.getInstance().login(id, password);
+		if(result) {
+			request.getSession().setAttribute("id", id);
+			
+		}
+		response.getWriter().print(result);
 	}
 
 

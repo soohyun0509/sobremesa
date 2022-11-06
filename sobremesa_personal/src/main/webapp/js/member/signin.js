@@ -10,7 +10,12 @@ function login(){
 		url:"/sobremesa_personal/member/signin",
 		data:{"id" : id , "password" : password},
 		success: function(re){
-			alert(re)
+			console.log("로그인 결과 : "+ re)
+			if(re=='false'){
+				document.querySelector(".login_result").innerHTML="아이디 또는 비밀번호를 잘못 입력했습니다."
+			}else{
+				location.href="/sobremesa_personal/page/main.jsp"
+			}
 		}
 	})
 	

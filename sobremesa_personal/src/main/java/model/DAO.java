@@ -18,7 +18,7 @@ public class DAO {
 			con=DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sobremesa",
 					"root",
-					"1234");
+					"123456");
 		} catch (Exception e) {System.out.println("DB연결 오류" +e);}
 		
 	}
@@ -40,7 +40,7 @@ public class DAO {
 	
 	// id중복체크
 	public boolean idcheck(String id) {
-		String sql="select * from member where id=?";
+		String sql="select * from member where mid=?";
 		try {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, id);
@@ -51,9 +51,27 @@ public class DAO {
 	
 	// email 중복 체크
 	public boolean emailcheck(String email) {
-		String sql="select * from member where
+		String sql="select * from member where memail=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, email);
+			rs=ps.executeQuery();
+			if(rs.next()) {return true;} 
+			
+		} catch (Exception e) {System.out.println("이메일 중복체크 오류" +e);}return false; 
 	}
 	
+	// 로그인
+	public boolean login(String id, String password) {
+		String sql="select * from member where mid=? and mpassword=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setString(2, password);
+			rs=ps.executeQuery();
+			if(rs.next()) {return true;}
+		} catch (Exception e)  {System.out.println("로그인 오류" +e);}return false; 
+	}
 	
 	
 }

@@ -31,10 +31,11 @@
 							</span>
 						</div>
 					</div>
-					
+					<div class="login_result">
+					</div>
 					<!-- remember me, forger pw -->
 					<div class="option_box">
-
+	
 						<!-- forger pw -->
 						<span>
 							<h3> <a href="#">Forget Password?</a> </h3>

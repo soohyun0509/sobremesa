@@ -21,144 +21,15 @@
 						<p>실제 방문자들의 솔직한 후기들을 만나보세요</p>
 					</div>
 					<table class="gallery_imgs">
-						<tr class="g_imgs_col1">
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img2.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img19.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img13.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-						</tr>
-						<tr class="g_imgs_col2">
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img5.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>	
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img6.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img7.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img8.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-						</tr>
-						<tr class="g_imgs_col3">
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img9.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img10.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img11.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img12.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-						</tr>
-						<tr class="g_imgs_col4">
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img4.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img14.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img15.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img16.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-						</tr>
-						<tr class="g_imgs_col5">
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img17.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img18.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img3.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-							<td>
-								<div>
-									<img class="img" alt="" src="../image/g_imgs/g_img20.jpg"></img>
-									<a href="https://www.instagram.com/" class="divs">자세히 보고싶다면<br> 눌러주세요<span class="content_icon"></span></a>
-								</div>
-							</td>
-						</tr>
+						
 					</table>
 					
 					<ul class="pagination">
-						<li><a href="#" class="current">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
+						<li onclick="printPicture(1)" class="current1 page">1</li>
+						<li onclick="printPicture(2)" class="current2 page">2</li>
+						<li onclick="printPicture(3)" class="current3 page">3</li>
+						<li onclick="printPicture(4)" class="current4 page">4</li>
+						<li onclick="printPicture(5)" class="current5 page">5</li>
 						<li><a href="#" class="pagination_icon"> </a></li>
 					</ul>
 				</div>
