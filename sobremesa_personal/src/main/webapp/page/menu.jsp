@@ -44,7 +44,7 @@
 							Dinner
 						</div>
 					<div class="image_box">
-							<img src="../image/g_imgs/g_img.jpg" alt="dinner_img">
+							<img src="../image/food2.jpg" alt="dinner_img">
 						</div>
 						<div class="menu_description">
 							<ul>

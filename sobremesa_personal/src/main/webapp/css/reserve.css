@@ -12,19 +12,18 @@
 }
 .cal{
 	width: 780px;
+	height: 800px;
 	background-color: #FEFCFF;
 	background-color:transparent;
 	border-radius : 5%;
 	margin-left : 210px;
 	margin-right : 210px;
 	text-align : center;
-	align-items: center;
-	align-content: center;
 }
 
 .head{
 	display: flex;
-	margin : 0 auto;
+	justify-content: space-around;
 	height: 100px;
 	align-items: center;
 	background-color: rgba( 11, 36, 39, 0.2 );
@@ -35,19 +34,21 @@
 	font-style: italic;
 }
 
-.left_btn{
-	text-align : center;
-	width : 240px;
-	font-size: 70px;
-	font-weight: bold;
-	color: #345B63;
+.left_btn::after{
+	font-family: "Font Awesome 5 Pro";
+	content: '\f30a';
+	font-weight: 900;
+	font-size: 50px;
+	color : black;
 }
-.right_btn{
-	text-align: center;
-	width : 240px;
-	font-size: 70px;
-	font-weight: bold;
-	color: #345B63;
+
+
+.right_btn::before{
+	font-family: "Font Awesome 5 Pro";
+	content : '\f30b';
+	font-weight: 900;
+	font-size: 50px;
+	color : black;
 }
 
 .reservation{
@@ -116,6 +117,7 @@
 	width : 99.4px;
 	height : 100px;
 	font-style: italic;
+	font-size:15px;
 	color: black;
 	font-weight: bold;
 	margin: 5px;
@@ -153,51 +155,28 @@
 	box-shadow: 6px 3px 3px gray;
 	
 }
-.days div:nth-child(1){
-	color : red;
-}
-.days div:nth-child(8){
-	color : red;
-}
-.days div:nth-child(15){
-	color : red;
-}
-.days div:nth-child(22){
-	color : red;
-}
+.days div:nth-child(1),
+.days div:nth-child(8),
+.days div:nth-child(15),
+.days div:nth-child(22),
 .days div:nth-child(29){
 	color : red;
 }
 
-.days div:nth-child(7){
-	color : blue;
-}
-.days div:nth-child(14){
-	color : blue;
-}
-.days div:nth-child(21){
-	color : blue;
-}
-.days div:nth-child(28){
-	color : blue;
-}
+.days div:nth-child(7),
+.days div:nth-child(14),
+.days div:nth-child(21),
+.days div:nth-child(28),
 .days div:nth-child(35){
 	color : blue;
 }
 
-.today{
-	border : 4px solid #F9A720;
-	color: black;
-	font-weight : bold;
-}
 #prevDay{
 	border : 1px dashed gray;
 	color: gray;
 	font-size: small;
 }
-#prevDay:nth-child(1){
-	color: gray;
-}
+#prevDay:nth-child(1){color: gray;}
 
 #nextDay{
 	border : 1px dashed gray;
@@ -206,16 +185,9 @@
 }
 
 
-li button{
-	font-size: 15px;
-}
+li button{font-size: 15px;}
 li button:hover{
 	border-bottom:1px dotted black;
-	font-weight: bold;
-}
-ul h2{
-	padding-top: 15px;
-	font-size: 22px;
 	font-weight: bold;
 }
 
@@ -227,50 +199,34 @@ li button::before{
 	margin-right: 7px;
 }
 
-/* ----------------------- 예 약 게 시 글  ------------------------ */
-/* ----------------------- 예 약 게 시 글  ------------------------ */
-/* ----------------------- 예 약 게 시 글  ------------------------ */
+/* -----------------------예약 폼------------------------ */
 
-.reser_section{
-	width: 1200px;
-	margin: 0 auto;
-	font-size: 50px;
+.reserve_html{
+	font-size: 30px;
 	margin-bottom: 50px;
 	border: 1px solid gray;
 }
-.reserbox{
+.reserveBox{
 	padding-top: 50px;
+	text-align: reft;
+	
 }
-.reser_form button{
-	border : 2px solid white;
-	background-color : white;
+.reserveBox input{
+	margin-bottom: 20px;
+	margin-left : 20px;
+	border: black 1px solid;
+	height: 40px;
+}
+.reserve_btn{
+	background-color : #D6E0F0;
+	padding: 30px;
 	margin: 0 auto;
-	width: 300px;
-	margin-left: 450px;
-	margin-bottom: 30px;
+	width: 200px;
+	border-radius: 10px;
 }
-
-#list{
-	width: 1200px;
-	margin: 0 auto;
-	font-size: 40px;
-	vertical-align: middle;
-	text-align: center;
+.reserve_title{
+	margin-top: 25px;
+	font-size: 50px;
 }
-
-.inputbox{
-	text-align: center;
-	align-items: center;
-}
-
-table{
-	text-align: center;
-	margin-bottom: 100px;
-}
-
-.when{
-	color: skyblue;
-}
-
 
 

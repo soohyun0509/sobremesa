@@ -36,22 +36,14 @@
 		</div>
 	</section>
 	
-	<div id="banners"> <!-- 배너 -->
-		<div class="banner_box">
-			<div class="banner">
-				<ul>
-					<li class="bn_col1"><img src="../image/주방1.jpg"></li>
-					<li class="bn_col2">
-						<h3> 최상의 요리 </h3>
-						<ul class="bn_col2_text">
-							<li>SOBREMESA 레스토랑은 </li>
-							<li>스페인어로 식사 후 가족들이나 지인들과 어울리고</li>
-							<li>서로 이야기를 나누며 즐거운 시간을 보내는 뜻을 의미합니다.</li>
-							<li>고객의 니즈에 맞게 더움 푹격있고 알찬 추억을 제공해드리고자 노력하겠습니다.</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+	<div class="info_restaurant">
+		<img src="../image/주방1.jpg">
+		<div>
+			<p>
+				SOBREMESA 레스토랑은 스페인어로 식사 후 가족들이나 지인들과 어울리고
+				서로 이야기를 나누며 즐거운 시간을 보내는 뜻을 의미합니다.
+				고객의 니즈에 맞게 더움 푹격있고 알찬 추억을 제공해드리고자 노력하겠습니다.
+			</p>
 		</div>
 	</div>
 	<div id="sub_items"> <!-- 서브페이지 소개 -->
@@ -59,29 +51,29 @@
 			<div class="item">
 				<ul>
 					<li> <img alt="" src="../image/주방.jpg"></li>
-					<li> <h3>음식 소개</h3></li>
-					<li> 뷔페 형식으로 다양한 음식을 즐길 수 있습니다.</li>
+					<li> <h3>메뉴페이지</h3></li>
+					<li> 매주 변경되는 새로운 메뉴를 만나보세요</li>
 				</ul>
 			</div>
 			<div class="item">
 				<ul>
-					<li> <img alt="" src="../image/주방.jpg"></li>
-					<li> <h3>홈 파티A</h3></li>
-					<li> 생일케이크, 샴페인, 랍스터 등 준비완료. </li>
+					<li> <img alt="" src="../image/cal.jpg"></li>
+					<li> <h3>예약페이지</h3></li>
+					<li> 저녁식사를 미리 예약하시면 더욱 편하게 식사를 즐길 수 있습니다. </li>
 				</ul>
 			</div>
 			<div class="item">
 				<ul>
-					<li> <img alt="" src="../image/주방.jpg"></li>
-					<li> <h3>홈 파티B</h3></li>
-					<li> 스테이크, 해산물 샐러드, 생일케이크 등 준비완료. </li>
+					<li> <img alt="" src="../image/review.jpg"></li>
+					<li> <h3>리뷰페이지</h3></li>
+					<li> 실제 방문객들의 솔직한 후기를 만나보세요 </li>
 				</ul>
 			</div>
 			<div class="item">
 				<ul>
-					<li> <img alt="" src="../image/주방.jpg"></li>
-					<li> <h3>홈 파티C</h3></li>
-					<li> 전복 버터구이, 아보카도 샐러드, 생일케이크 등 준비완료.</li>
+					<li> <img alt="" src="../image/customer.jpg"></li>
+					<li> <h3>문의사항</h3></li>
+					<li> 식당이용시 문의사항이 있다면 남겨주세요.</li>
 				</ul>
 			</div>
 		</div>

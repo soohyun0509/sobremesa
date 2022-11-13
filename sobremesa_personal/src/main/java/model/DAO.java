@@ -73,5 +73,34 @@ public class DAO {
 		} catch (Exception e)  {System.out.println("로그인 오류" +e);}return false; 
 	}
 	
+	// id로 회원번호 가져오기
+	public int getMno(String id) {
+		String sql="select mno from member where mid=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e){System.out.println("mno 가져오기 오류" +e);} return 0;
+	}
+	
+	// 예약
+	public boolean reserve(int mno,String name, String phone, String r_date, int r_size) {
+		String sql ="insert into reservation values(0,?,?,?,?,?)";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			ps.setString(3, r_date);
+			ps.setInt(4, r_size);
+			ps.setInt(5, mno);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e){System.out.println("예약하기 오류" +e);} return false;
+	}
+	
+	
 	
 }

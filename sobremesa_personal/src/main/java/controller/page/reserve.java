@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAO;
+
 
 @WebServlet("/page/reserve")
 public class reserve extends HttpServlet {
@@ -26,8 +28,19 @@ public class reserve extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+		String id=(String)request.getSession().getAttribute("id");
+		
+		int mno=DAO.getInstance().getMno(id);
+		String name=request.getParameter("name");
+		String phone=request.getParameter("phone");
+		String r_date=request.getParameter("r_date");
+		int r_size=Integer.parseInt(request.getParameter("r_size"));
+	
+		
+		boolean result=DAO.getInstance().reserve(mno,name,phone,r_date,r_size);
+		response.getWriter().print(result);
+	
 	}
 
 }
